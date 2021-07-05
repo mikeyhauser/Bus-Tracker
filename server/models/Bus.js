@@ -2,18 +2,19 @@ const { Schema, model } = require('mongoose');
 
 const busSchema = new Schema(
     {
-
-
       busNumber: {
         type: Number,
         required: true,
         unique: true,
         trim: true
       },
-      students: [
+      stops: {
+        type: Number
+      },
+      students: 
+      [
         {
-          type: Schema.Types.ObjectId,
-          ref: "Student"
+          type: String
         }],
 
       isRunning: {
@@ -28,7 +29,8 @@ const busSchema = new Schema(
       }
 
       
-    });
+    }
+  );
   
   const Bus = model('Bus', busSchema);
   

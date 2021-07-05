@@ -2,17 +2,17 @@ const { Schema, model } = require('mongoose');
 
 
 const stopSchema = new Schema(
-    {
+    {   
+        route: {
+            type: Number
+        },
         location: {
             type: String,
             required: true,
             trim: true
         },
         students: [
-            {
-              type: Schema.Types.ObjectId,
-              ref: "Student"
-            }],
+            ],
         order: {
             type: Number,
             required: true,
