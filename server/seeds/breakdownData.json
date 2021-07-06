@@ -1,0 +1,21 @@
+[
+    {
+        "busNumber": "329",
+        "mechanicalProblem": "Water pump is leaking",
+        "dateOfBreakdown": "07/21/2021",
+        "assignedMechanic": "Russell Sanchez",
+        "diagnosed": true,
+        "partsOrdered": true,
+        "projectedCompletion": "07/23/2021"
+
+    },
+    {
+        "busNumber": "339",
+        "mechanicalProblem": "Low power: max speed is 15 mph.",
+        "dateOfBreakdown": "07/01/2021",
+        "assignedMechanic": "",
+        "diagnosed": false,
+        "partsOrdered": false,
+        "projectedCompletion": ""
+    }
+]

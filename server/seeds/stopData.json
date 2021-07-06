@@ -1,0 +1,164 @@
+[
+    {
+        "route": 330,
+        "location": "Mel Oaks Dr",
+        "students": [
+            "Ben Melton",
+            "Mikey Hauser",
+            "Paul Blackwell",
+            "Grace Armond"
+        ],
+        "order": 1
+    },
+    {
+        "route": 330,
+        "location": "Frosties Gas Station",
+        "students": [
+            "Richard Leano",
+            "Preston Scott",
+            "David Kim",
+            "Travis Barker"
+        ],
+        "order": 2
+    },
+    {
+        "route": 330,
+        "location": "Manns Chapel Rd",
+        "students": [
+            "David Campbell",
+            "Kaylee Smith",
+            "Sarah Shae"
+        ],
+        "order": 3
+    },
+
+
+
+
+
+
+
+    {
+        "route": 331,
+        "location": "Elliot Rd",
+        "students": [
+            "Jonny Smith",
+            "Laura Brewington"
+        ],
+        "order": 1
+    },
+    {
+        "route": 331,
+        "location": "Mt Piney Rd",
+        "students": [
+            "Steven Blackwell",
+                "Jim Raynor",
+                "Sarah Kerrigan"
+        ],
+        "order": 2
+    },
+    {       
+         "route": 331,
+        "location": "Estes",
+        "students": [
+            "Tychus Findley",
+            "Leah James"
+        ],
+        "order": 3
+    },
+
+
+
+
+
+    
+    {       
+        "route": 332,
+       "location": "Orange Grove Rd",
+       "students": [
+        "Carol James",
+        "Al Greene",
+        "Harold Bluff",
+        "Robert Plant",
+        "Jimmy Paige"
+       ],
+       "order": 1
+   },
+   {       
+    "route": 332,
+   "location": "North Greensboro Rd",
+   "students": [
+    "Paul Simon",
+    "George Harrison",
+    "Ringo Starr"
+   ],
+   "order": 2
+},
+{       
+    "route": 332,
+   "location": "Collins Creek Dr",
+   "students": [
+    "John Lennon",
+    "Ginger Baker",
+    "Brian May"
+   ],
+   "order": 3
+},
+{       
+    "route": 332,
+   "location": "Buckhorn Rd",
+   "students": [
+    "Freddie Mercury",
+    "Elton John"
+   ],
+   "order": 4
+},
+
+
+
+
+
+{       
+    "route": 333,
+   "location": "Atlantis Dr",
+   "students": [
+    "Liquid Snake",
+    "Solid Snake",
+    "Big Boss",
+    "Vulcan Raven"
+   ],
+   "order": 1
+},
+{       
+    "route": 333,
+   "location": "Snow Camp Rd",
+   "students": [
+    "Sniper Wolf",
+    "Mantis",
+    "Revolver Ocelot",
+    "Ryden"
+   ],
+   "order": 2
+},
+{       
+    "route": 333,
+   "location": "Carolina Forrest Dr",
+   "students": [
+    "Metal Gear"
+   ],
+   "order": 3
+},
+{       
+    "route": 333,
+   "location": "Turkey Run Rd",
+   "students": [
+    "Decoy Octopus"
+
+   ],
+   "order": 4
+}
+
+
+
+
+]
