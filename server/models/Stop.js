@@ -21,5 +21,5 @@ const stopSchema = new Schema(
 
     });
 
-const Stop = model('Stop', stopSchema);
-module.exports = Stop;
+const stop = model('stop', stopSchema);
+module.exports = stop;

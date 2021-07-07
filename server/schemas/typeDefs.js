@@ -9,25 +9,20 @@ const typeDefs = gql`
     isRunning: Boolean
     engineHours: Int
     daysToService: Int
-
   }
-
     type Stop{
         students: [String]
         _id: ID
         route: Int
         location: String
         order: Int
-
     }
-
     type Student{
         _id: ID
         name: String
         busNumber: Int
         contact: String
     }
-
     type Breakdown{
         _id: ID
         busNumber: Int
@@ -42,7 +37,6 @@ const typeDefs = gql`
         stops: [Stop]
         students: [Student]
         breakdowns: [Breakdown]
-
       }
     `
     module.exports = typeDefs;

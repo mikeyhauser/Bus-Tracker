@@ -22,4 +22,3 @@ const studentSchema = new Schema(
   const Student = model('Student', studentSchema);
   
   module.exports = Student;
-  

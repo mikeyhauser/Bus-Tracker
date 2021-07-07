@@ -32,6 +32,6 @@ const busSchema = new Schema(
     }
   );
   
-  const Bus = model('Bus', busSchema);
+  const bus = model('bus', busSchema);
   
-  module.exports = Bus;
+  module.exports = bus;
