@@ -3,6 +3,7 @@ const { Bus, Stop, Student, Breakdown } = require('../models');
 
 const resolvers = {
     Query: {
+    
         buses: async () => {
             return await Bus.find({});
         },
