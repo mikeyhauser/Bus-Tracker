@@ -6,6 +6,8 @@ const typeDefs = gql`
 type Mutation{
   login(email: String!, password: String!):Auth
   addUser(username: String!, email: String!, password: String!):Auth
+ 
+
 }
 type User{
     id: ID!
@@ -15,7 +17,6 @@ type User{
   }
   type Bus {
     _id: ID
-    busNumber: Int
     stops: Int
     students: [String]
     isRunning: Boolean
@@ -49,8 +50,9 @@ type User{
         stops: [Stop]
         students: [Student]
         breakdowns: [Breakdown]
+        user: [User]
       }
-    type Query {
+    type Driver {
       driver: User
     }
 
