@@ -1,9 +1,22 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+  
+
+type Mutation{
+  login(email: String!, password: String!):Auth
+  addUser(username: String!, email: String!, password: String!):Auth
+ 
+
+}
+type User{
+    id: ID!
+    username: String!
+    email: String
+    
+  }
   type Bus {
     _id: ID
-    busNumber: Int
     stops: Int
     students: [String]
     isRunning: Boolean
@@ -37,6 +50,15 @@ const typeDefs = gql`
         stops: [Stop]
         students: [Student]
         breakdowns: [Breakdown]
+        user: [User]
       }
+    type Driver {
+      driver: User
+    }
+
+    type Auth{
+      token: ID!
+      user: User
+    }
     `
     module.exports = typeDefs;
