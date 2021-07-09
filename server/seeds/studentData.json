@@ -2,7 +2,8 @@
     {
         "name": "Ben Melton",
         "busNumber": "330",
-        "contact": "555-555-5555"
+        "contact": "555-555-5555",
+        "missedBus": true
     },
     {
         "name": "Mikey Hauser",

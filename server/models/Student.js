@@ -11,6 +11,10 @@ const studentSchema = new Schema(
       {
         type: Number
       },
+      missedBus:
+      {
+        type: Boolean
+      },
     
       contact:{
           type: String

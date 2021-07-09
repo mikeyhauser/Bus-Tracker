@@ -21,6 +21,7 @@ const typeDefs = gql`
         _id: ID
         name: String
         busNumber: Int
+        missedBus: Boolean
         contact: String
     }
     type Breakdown{
@@ -37,6 +38,24 @@ const typeDefs = gql`
         stops: [Stop]
         students: [Student]
         breakdowns: [Breakdown]
-      }
+      
+        currentStop(order: Int!, route: Int!): Stop
+
+        currentRoster(busNumber: Int!): [Student]
+        unassignedStudents(isRunning: Boolean!): [Bus]
+
+    }
+    type Mutation {
+      addBreakdown(busNumber: Int!, mechanicalProblem: String!, dateOfBreakdown: String!): Breakdown
+
+      studentStatus(name: String!, missedBus: Boolean): Student
+
+      busStatus(busNumber: Int!, isRunning: Boolean): Bus
+
+
+
+    }
+
+
     `
     module.exports = typeDefs;
