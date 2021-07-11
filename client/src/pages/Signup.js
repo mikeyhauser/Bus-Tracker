@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Message, Segment, Modal } from 'semantic-ui-react'
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -61,7 +61,7 @@ const SignUpForm = () => {
         <Image src="busicon.png" alt="Bus Icon" /> Sign Up for your account
       </Header>
       <Form validated={validated} onSubmit={handleFormSubmit} size='large'>
-    
+  
         <Segment stacked>
           <Form.Input 
           fluid icon='smile outline' 
@@ -99,6 +99,24 @@ const SignUpForm = () => {
           type='submit'color='teal' fluid size='large'>
             Signup
           </Button>
+          <Modal
+          
+          centered={false}
+          open={showAlert}
+          onClose={() => setShowAlert(false)}
+          onOpen={() => setShowAlert(true)}
+        
+        >
+          <Modal.Header >Uh Oh!</Modal.Header>
+          <Modal.Content>
+            <Modal.Description>
+           Something Went Wrong With Your Credentials
+            </Modal.Description>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button onClick={() => setShowAlert(false)}>OK</Button>
+          </Modal.Actions>
+        </Modal>
         </Segment>
       </Form>
       <Message>

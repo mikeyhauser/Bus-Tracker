@@ -92,13 +92,14 @@ return (
             Login
           </Button>
           <Modal
+          
       centered={false}
       open={showAlert}
       onClose={() => setShowAlert(false)}
       onOpen={() => setShowAlert(true)}
     
     >
-      <Modal.Header>Uh Oh!</Modal.Header>
+      <Modal.Header >Uh Oh!</Modal.Header>
       <Modal.Content>
         <Modal.Description>
        Something Went Wrong With Your Credentials
@@ -112,7 +113,7 @@ return (
         </Segment>
       </Form>
       <Message>
-        New to us? <a href='#'>Sign Up</a>
+        New to us? <a href ='#' >Sign Up</a>
       </Message>
     </Grid.Column>
   </Grid>
