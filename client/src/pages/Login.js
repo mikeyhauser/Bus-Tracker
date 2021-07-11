@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Message, Segment, Modal } from 'semantic-ui-react'
 import { useMutation  } from '@apollo/react-hooks'
 import { LOGIN_USER } from '../utils/mutations'
 import Auth from '../utils/auth'
@@ -59,10 +59,10 @@ return (
       <Header as='h2' color='teal' textAlign='center'>
         <Image src="busicon.png" alt="Bus Icon" /> Log-in to your account
       </Header>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit} size='large'>
-      <Message color= 'red' dismissible onClose={() => setShowAlert(false)} show={showAlert}>
+      <Form noValidate validated={validated}onSubmit={handleFormSubmit} size='large'>
+      {/* <Message color= 'red' dismissible onClose={() => setShowAlert(false)} show={showAlert}>
           Something went wrong with your login credentials!
-        </Message>
+        </Message> */}
 
         <Segment stacked>
           <Form.Input  
@@ -72,7 +72,8 @@ return (
           type = 'text'
           name = 'email'
           onChange = {handleInputChange}
-          value = {userFormData.email}
+          value = {userFormData.email} 
+
 
           />
           <Form.Input
@@ -87,9 +88,27 @@ return (
             required
           />
 
-          <Button color='teal' fluid size='large'>
+          <Button  color='teal' fluid size='large'>
             Login
           </Button>
+          <Modal
+      centered={false}
+      open={showAlert}
+      onClose={() => setShowAlert(false)}
+      onOpen={() => setShowAlert(true)}
+    
+    >
+      <Modal.Header>Uh Oh!</Modal.Header>
+      <Modal.Content>
+        <Modal.Description>
+       Something Went Wrong With Your Credentials
+        </Modal.Description>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button onClick={() => setShowAlert(false)}>OK</Button>
+      </Modal.Actions>
+    </Modal>
+  
         </Segment>
       </Form>
       <Message>
