@@ -1,60 +1,49 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
-      _id
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        createdAt
-      }
-    }
+
+
+// pull up students at current stop
+export const CURRENT_STOP = gql`
+  query stopQueue ($order: Int!, $route: Int!) {
+  	currentStop(order: $order, route: $route){
+    _id
+    order
+    route	
+    students
   }
+} 
+`;
+// pull up student roster on current buss
+export const CURRENT_ROSTER = gql`
+  query rosterQueue ($busNumber: Int!) {
+    currentRoster(busNumber: $busNumber){
+      _id
+      name
+      contact	
+    }
+  } 
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-    }
+// pull students that belong to a 
+// broken bus and need to be picked up
+// by another running bus
+export const UNASSIGNED_STUDENTS = gql`
+query unassignedQueue ($isRunning: Boolean!) {
+  unassignedStudents(isRunning: $isRunning){
+    students
+    
   }
+}
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
-    }
-  }
-`;
 
-export const QUERY_ME = gql`
-  query me {
-    me {
+export const CURRENT_BREAKDOWNS = gql`
+query breakdownsQueue {
+  breakdowns{
       _id
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        thoughtAuthor
-        createdAt
-      }
-    }
+      busNumber
+      mechanicalProblem
+      dateOfBreakdown
   }
+}
 `;

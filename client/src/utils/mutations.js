@@ -24,33 +24,38 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
+//creates a breakdown report
+export const REPORT_BREAKDOWN = gql`
+    mutation reportBreakdown ($busNumber: Int!, $mechanicalProblem: String!, $dateOfBreakdown: String!) {
+      addBreakdown(busNumber: $busNumber, mechanicalProblem: $mechanicalProblem, dateOfBreakdown: $dateOfBreakdown) {
         _id
-        commentText
+        
       }
     }
-  }
+  `;
+
+//Change students missedBus boolean value
+export const STUDENT_STATUS = gql`
+    mutation studentStatus ($name: String!, $missedBus: Boolean!) {
+      studentStatus(
+        name: $name,
+        missedBus: $missedBus){
+      name
+      missedBus
+      }
+    }
 `;
 
-export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
-    }
-  }
+//Changes bus isRunning boolean value
+export const BUS_STATUS = gql`
+mutation busStatus ($busNumber: Int!, $isRunning: Boolean!) {
+  busStatus(
+    busNumber: $busNumber,
+    isRunning: $isRunning
+    )
+    {
+busNumber
+isRunning
+}
+}
 `;

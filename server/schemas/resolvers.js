@@ -92,11 +92,15 @@ addUser: async (parent, args) => {
           busStatus: async (parent, { busNumber, isRunning }) => {
             return Bus.findOneAndUpdate(
               { busNumber: busNumber },
-              { isRunning: isRunning }
+              { isRunning: isRunning },
+              {
+                new: true
+              }
             );
           }
     }
 };
+
 
 
 

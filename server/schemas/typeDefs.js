@@ -19,6 +19,7 @@ type User{
   }
   type Bus {
     _id: ID
+    busNumber: Int
     stops: Int
     students: [String]
     isRunning: Boolean
