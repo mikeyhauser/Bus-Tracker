@@ -1,24 +1,31 @@
 import React from 'react'
-import { Card, Header } from 'semantic-ui-react'
+import { List, Header } from 'semantic-ui-react'
 import { useQuery } from '@apollo/react-hooks';
 import { CURRENT_ROSTER} from '../utils/queries'
 // import Auth from '../utils/auth';
 
 
-const rosterStatus = () => {
-    // const { loading, data} = useQuery(query)
+const RosterStatus = () => {
+    const { loading, data} = useQuery(CURRENT_ROSTER)
+    const roster = data?.roster || [];
+
+
 
 return (
 
    
-<Card.Group>
-<Header as='h1' block textAlign='right'>Roster Status</Header>
-<Card fluid color='Yellow' header='Option 1' />
-<Card fluid color='yellow' header='Option 2' />
-<Card fluid color='yellow' header='Option 3' />
+<List>
+<Header as='h1' block> Roster Status </Header>
+  
+  <List.Item>
+    
+    
+  </List.Item>
+  
+</List>
+  
 
-</Card.Group>
 
 ) 
 }
-export default rosterStatus
+export default RosterStatus
