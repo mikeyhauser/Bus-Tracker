@@ -11,6 +11,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Signup from './pages/Signup';
+import Breakdowns from './pages/Breakdowns';
+import Unassigned from './pages/Unassigned';
+
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -46,6 +49,7 @@ const authLink = setContext((_, { headers }) => {
 
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  uri: '/graphql',
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
@@ -65,6 +69,12 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/breakdowns">
+              <Breakdowns />
+            </Route>
+            <Route exact path="/unassigned">
+              <Unassigned />
             </Route>
           </div>
           <Footer />
