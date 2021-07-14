@@ -5,9 +5,9 @@ import { CURRENT_ROSTER} from '../utils/queries'
 // import Auth from '../utils/auth';
 
 
-const RosterStatus = (prop) => {
+const RosterStatus = () => {
     const { loading, data} = useQuery(CURRENT_ROSTER, {
-      variables:{busNumber: 330}
+      variables:{busNumber: 332}
     })
     const roster = data?.roster || [];
 
@@ -19,7 +19,8 @@ console.log(data)
     const renderStudents = () => {
       console.log(data)
    return data.currentRoster.map((s) => {
-        return <List.Item>{s.name}</List.Item>
+   
+        return <List.Item>{s.name}: {s.contact}</List.Item>
 
     })
   }
@@ -29,7 +30,7 @@ if(data === undefined){
 }
   return <div>
     <Header>ROSTER STATUS:</Header>
-    <h2>{prop.busNumber}</h2>
+
       <List>{renderStudents()}</List>
     </div>
 
