@@ -32,12 +32,6 @@ const breakdownSchema = new Schema(
     }
 );
 
-<<<<<<< HEAD
-const Breakdown = model('Breakdown', breakdownSchema);
-
-module.exports = Breakdown;
-=======
 const breakdown = model('breakdown', breakdownSchema);
 
 module.exports = breakdown;
->>>>>>> 3e9b66d66cd31f254a15ec4f54d60706797c95e0

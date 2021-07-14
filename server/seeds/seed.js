@@ -1,14 +1,16 @@
 const db = require('../config/connection.js');
-const { Bus, Stop, Student, Breakdown } = require('../models');
+const { Bus, Stop, Student, Breakdown, User } = require('../models');
 
 const busData = require('./busData.json');
 const stopData = require('./stopData.json');
 const studentData = require('./studentData.json');
 const breakdownData = require('./breakdownData.json');
+const userData = require('./userData.json');
 
 
 db.once('open', async () => {
   // clean database
+  await User.deleteMany({})
   await Bus.deleteMany({});
   await Stop.deleteMany({});
   await Student.deleteMany({});
@@ -25,6 +27,8 @@ db.once('open', async () => {
   const breakdowns = await Breakdown.insertMany(breakdownData);
   console.log(breakdowns);
 
+  const user = await User.insertMany(userData);
+  console.log(user);
   console.log('all done!');
   process.exit(0);
 });

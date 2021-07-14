@@ -18,7 +18,11 @@
         "concurrently": "^5.1.0"
     },
     "dependencies": {
+        "@artsy/fresnel": "^1.7.0",
         "if-env": "^1.0.4",
-        "kill-port": "^1.6.1"
+        "kill-port": "^1.6.1",
+        "prop-types": "^15.7.2",
+        "semantic-ui-css": "^2.4.1",
+        "semantic-ui-react": "^2.0.3"
     }
 }
