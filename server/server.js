@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 const express = require('express');
 const path = require('path');
 const db = require('./config/connection');
@@ -15,7 +13,6 @@ const server = new ApolloServer({
   resolvers,
   context: authMiddleware,
 });
->>>>>>> 381c193d92295d123425f03b4d48f7c42b48a635
 
 server.applyMiddleware({ app });
 
