@@ -1,6 +1,6 @@
 import React from 'react'
 import { List, Header, Segment } from 'semantic-ui-react'
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { CURRENT_ROSTER} from '../utils/queries'
 import Auth from '../utils/auth';
 
