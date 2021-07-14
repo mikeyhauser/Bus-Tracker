@@ -1,4 +1,5 @@
 import { createMedia } from '@artsy/fresnel'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
@@ -56,8 +57,9 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
-      Get Started
+    <Button as ={ Link } to='/RosterStatus'primary size='huge'>
+
+       Roster Status
       <Icon name='right arrow' />
     </Button>
   </Container>
@@ -297,7 +299,7 @@ const HomepageLayout = () => (
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-          <a href='#'>Case Studies</a>
+          <a href='/'>Case Studies</a>
         </Divider>
 
         <Header as='h3' style={{ fontSize: '2em' }}>
