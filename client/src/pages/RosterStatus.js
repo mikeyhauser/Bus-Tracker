@@ -1,15 +1,15 @@
 import React from 'react'
-import { List, Header } from 'semantic-ui-react'
-import { useQuery } from '@apollo/react-hooks';
+import { List, Header, Segment } from 'semantic-ui-react'
+import { useQuery } from '@apollo/client';
 import { CURRENT_ROSTER} from '../utils/queries'
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 
 const RosterStatus = () => {
     const { loading, data} = useQuery(CURRENT_ROSTER, {
       variables:{busNumber: 332}
     })
-    const roster = data?.roster || [];
+    // const roster = data?.roster || [];
 
 
 
@@ -20,18 +20,31 @@ console.log(data)
       console.log(data)
    return data.currentRoster.map((s) => {
    
-        return <List.Item>{s.name}: {s.contact}</List.Item>
+         
+        return<List>
+            <List.Content>
+                <List.Header>{s.name}</List.Header>
+                  Contact:{s.contact}
+                </List.Content>
+
+            </List>
+
+      
 
     })
-  }
+ 
+}
 
 if(data === undefined){
   return <h1>Loading</h1>
 }
   return <div>
-    <Header>ROSTER STATUS:</Header>
+    <Header block>ROSTER STATUS:</Header>
+    <Segment>
 
-      <List>{renderStudents()}</List>
+      <List celled> {renderStudents()} </List>
+    
+      </Segment>
     </div>
 
 }
