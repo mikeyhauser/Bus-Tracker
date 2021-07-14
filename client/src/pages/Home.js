@@ -1,6 +1,6 @@
-import { createMedia } from '@artsy/fresnel'
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import { createMedia } from '@artsy/fresnel';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import {
   Button,
   Container,
@@ -14,7 +14,9 @@ import {
   Segment,
   Sidebar,
   Visibility,
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
+
+
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -33,39 +35,39 @@ const { MediaContextProvider, Media } = createMedia({
 
 // HEADER COMPONENT
 
-const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Header
-      as='h1'
-      content='Imagine-a-Company'
-      inverted
-      style={{
-        fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
-        marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
-      }}
-    />
-    <Header
-      as='h2'
-      content='Do whatever you want when you want to.'
-      inverted
-      style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
-        fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em',
-      }}
-    />
-    <Button primary size='huge'>
-      Get Started
-      <Icon name='right arrow' />
-    </Button>
-  </Container>
-)
+// const HomepageHeading = ({ mobile }) => (
+//   <Container text>
+//     <Header
+//       as='h1'
+//       content='Imagine-a-Company'
+//       inverted
+//       style={{
+//         fontSize: mobile ? '2em' : '4em',
+//         fontWeight: 'normal',
+//         marginBottom: 0,
+//         marginTop: mobile ? '1.5em' : '3em',
+//       }}
+//     />
+//     <Header
+//       as='h2'
+//       content='Do whatever you want when you want to.'
+//       inverted
+//       style={{
+//         fontSize: mobile ? '1.5em' : '1.7em',
+//         fontWeight: 'normal',
+//         marginTop: mobile ? '0.5em' : '1.5em',
+//       }}
+//     />
+//     <Button primary size='huge'>
+//       Get Started
+//       <Icon name='right arrow' />
+//     </Button>
+//   </Container>
+// )
 
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-}
+// HomepageHeading.propTypes = {
+//   mobile: PropTypes.bool,
+// }
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -107,7 +109,7 @@ class DesktopContainer extends Component {
               secondary={!fixed}
               size='large'
             >
-              <Container>
+              {/* <Container>
                 <Menu.Item as='a' active>
                   Home
                 </Menu.Item>
@@ -122,9 +124,9 @@ class DesktopContainer extends Component {
                     Sign Up
                   </Button>
                 </Menu.Item>
-              </Container>
+              </Container> */}
             </Menu>
-            <HomepageHeading />
+            {/* <HomepageHeading /> */}
           </Segment>
         </Visibility>
 
@@ -192,7 +194,7 @@ class MobileContainer extends Component {
                   </Menu.Item>
                 </Menu>
               </Container>
-              <HomepageHeading mobile />
+              {/* <HomepageHeading mobile /> */}
             </Segment>
 
             {children}
@@ -229,12 +231,17 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
+              Track That Bus
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
+              Track your route in real time & don't let mechanical issues get you down!
             </p>
+            <li>
+              View a roster of the students on your route
+            </li>
+            <li>
+              Report mechanical issues in real time
+            </li>
             <Header as='h3' style={{ fontSize: '2em' }}>
               We Make Bananas That Can Dance
             </Header>

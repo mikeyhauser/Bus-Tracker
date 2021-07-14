@@ -14,6 +14,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+// import NavPreLogin from './components/NavPreLogin';
 
 
 // import Home from './pages/Home';
