@@ -316,7 +316,7 @@ const HomepageLayout = () => (
       </Container>
     </Segment>
 
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
+    {/* <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
@@ -339,8 +339,8 @@ const HomepageLayout = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <Header as='h4' inverted>
-                Footer Header
+              <Header as='h1' inverted>
+                Bus Tracker
               </Header>
               <p>
                 Extra space for a call to action inside the footer that could help re-engage users.
@@ -349,7 +349,7 @@ const HomepageLayout = () => (
           </Grid.Row>
         </Grid>
       </Container>
-    </Segment>
+    </Segment> */}
   </ResponsiveContainer>
 )
 

@@ -36,7 +36,7 @@ console.log(data)
 }
 
 if(data === undefined){
-  return <h1>Loading</h1>
+  return <h1>{ loading }</h1>
 }
   return <div>
     <Header block>ROSTER STATUS:</Header>
