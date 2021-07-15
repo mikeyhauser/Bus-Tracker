@@ -1,6 +1,7 @@
-import { createMedia } from '@artsy/fresnel';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { createMedia } from '@artsy/fresnel'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import {
   Button,
   Container,
@@ -29,48 +30,42 @@ const { MediaContextProvider, Media } = createMedia({
   },
 })
 
-/* Heads up!
- * HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled
- * components for such things.
- */
-
-
-
 // HEADER COMPONENT
 
-// const HomepageHeading = ({ mobile }) => (
-//   <Container text>
-//     <Header
-//       as='h1'
-//       content='Imagine-a-Company'
-//       inverted
-//       style={{
-//         fontSize: mobile ? '2em' : '4em',
-//         fontWeight: 'normal',
-//         marginBottom: 0,
-//         marginTop: mobile ? '1.5em' : '3em',
-//       }}
-//     />
-//     <Header
-//       as='h2'
-//       content='Do whatever you want when you want to.'
-//       inverted
-//       style={{
-//         fontSize: mobile ? '1.5em' : '1.7em',
-//         fontWeight: 'normal',
-//         marginTop: mobile ? '0.5em' : '1.5em',
-//       }}
-//     />
-//     <Button primary size='huge'>
-//       Get Started
-//       <Icon name='right arrow' />
-//     </Button>
-//   </Container>
-// )
+const HomepageHeading = ({ mobile }) => (
+  <Container text>
+    <Header
+      as='h1'
+      content='Imagine-a-Company'
+      inverted
+      style={{
+        fontSize: mobile ? '2em' : '4em',
+        fontWeight: 'normal',
+        marginBottom: 0,
+        marginTop: mobile ? '1.5em' : '3em',
+      }}
+    />
+    <Header
+      as='h2'
+      content='Do whatever you want when you want to.'
+      inverted
+      style={{
+        fontSize: mobile ? '1.5em' : '1.7em',
+        fontWeight: 'normal',
+        marginTop: mobile ? '0.5em' : '1.5em',
+      }}
+    />
+    <Button as ={ Link } to='/RosterStatus'primary size='huge'>
 
-// HomepageHeading.propTypes = {
-//   mobile: PropTypes.bool,
-// }
+       Roster Status
+      <Icon name='right arrow' />
+    </Button>
+  </Container>
+)
+
+HomepageHeading.propTypes = {
+  mobile: PropTypes.bool,
+}
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -170,9 +165,9 @@ class MobileContainer extends Component {
             </Menu.Item>
             <Menu.Item as='a'>Work</Menu.Item>
             <Menu.Item as='a'>Company</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item>
-            <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
+            <Menu.Item as='a'>Roster Status</Menu.Item>
+            {/* <Menu.Item as='a'>Log in</Menu.Item>
+            <Menu.Item as='a'>Sign Up</Menu.Item> */}
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened}>

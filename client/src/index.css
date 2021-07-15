@@ -193,6 +193,7 @@ button,
   -webkit-appearance: button;
 }
 
+
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -361,6 +362,7 @@ body {
     'Segoe UI Symbol';
   font-size: 16px;
   color: #1a1a1a;
+
 }
 
 h1,
