@@ -28,8 +28,8 @@ export const CURRENT_ROSTER = gql`
 // broken bus and need to be picked up
 // by another running bus
 export const UNASSIGNED_STUDENTS = gql`
-query unassignedQueue ($isRunning: Boolean!) {
-  unassignedStudents(isRunning: $isRunning){
+query unassignedQueue {
+  unassignedStudents(isRunning: false){
     students
     
   }

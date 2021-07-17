@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Breakdowns from './pages/Breakdowns';
 import Unassigned from './pages/Unassigned';
+import Roster from './pages/RosterStatus'
 
 import Login from './pages/Login';
 import Header from './components/Header';
@@ -69,6 +70,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/RosterStatus">
+              <Roster />
             </Route>
             <Route exact path="/breakdowns">
               <Breakdowns />
