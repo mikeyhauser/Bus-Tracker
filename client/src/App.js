@@ -19,7 +19,7 @@ import Mainpage from './pages/Mainpage';
 
 import Login from './pages/Login';
 // import Header from './components/Header';
-import Navbar from './components/NavBar/navbar';
+// import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BreakdownSubmissions from './pages/BreakdownsSubmissions';
 
@@ -66,7 +66,7 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           {/* <Header /> */}
-          <Navbar />
+          {/* <Navbar /> */}
           <div className="container">
             <Route exact path="/">
               <Home />

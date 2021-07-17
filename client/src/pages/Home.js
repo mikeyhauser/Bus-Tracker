@@ -298,7 +298,6 @@ const HomepageLayout = () => (
     </Segment>
 
 
-
   </ResponsiveContainer>
 )
 

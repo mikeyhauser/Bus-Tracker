@@ -3,11 +3,18 @@ import { useQuery } from '@apollo/client';
 import {  UNASSIGNED_STUDENTS } from '../utils/queries';
 // import BreakdownList from '../components/BreakdownList';
 import UnassignedList from '../components/UnassignedList';
+import { Redirect } from 'react-router-dom';
+import Auth from '../utils/auth';
 
 
 const Unassigned = () => {
   const { loading, data: studentData } = useQuery( UNASSIGNED_STUDENTS );
   const students  = studentData?.unassignedStudents || [];
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
+  if(!token){
+    return <Redirect to="/login" />;
+  }
+
 
   return (
     <main>
