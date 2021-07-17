@@ -14,10 +14,14 @@ import Signup from './pages/Signup';
 import Roster from './pages/RosterStatus'
 import Breakdowns from './pages/Breakdowns';
 import Unassigned from './pages/Unassigned';
+import Mainpage from './pages/Mainpage';
+
 
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import BreakdownSubmissions from './pages/BreakdownsSubmissions';
+// import NavPreLogin from './components/NavPreLogin';
 
 
 // import Home from './pages/Home';
@@ -65,6 +69,9 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/mainpage">
+              <Mainpage />
+            </Route>
             <Route exact path="/login">
               <Login />
             </Route>
@@ -76,6 +83,9 @@ function App() {
             </Route>
             <Route exact path="/breakdowns">
               <Breakdowns />
+            </Route>
+            <Route exact path="/breakdownsubmissions">
+              <BreakdownSubmissions />
             </Route>
             <Route exact path="/unassigned">
               <Unassigned />
