@@ -1,5 +1,7 @@
 import React from 'react'
 import { Header, Image, Segment, Icon, Input, Grid, Form, Button } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom'
+import Auth from '../utils/auth'
 
 
 
