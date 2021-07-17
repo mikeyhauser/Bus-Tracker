@@ -20,6 +20,7 @@ const Mainpage = () => (
 </Segment>
 
 
+
 <Segment.Group raised horizontal>
     <Segment>
         <Icon name='arrow alternate circle left outline' size='big' />
