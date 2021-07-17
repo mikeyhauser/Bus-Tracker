@@ -18,10 +18,11 @@ import Mainpage from './pages/Mainpage';
 
 
 import Login from './pages/Login';
-import Header from './components/Header';
+// import Header from './components/Header';
+// import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BreakdownSubmissions from './pages/BreakdownsSubmissions';
-// import NavPreLogin from './components/NavPreLogin';
+
 
 
 // import Home from './pages/Home';
@@ -64,7 +65,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          {/* <Header /> */}
+          {/* <Navbar /> */}
           <div className="container">
             <Route exact path="/">
               <Home />
