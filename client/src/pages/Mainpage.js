@@ -1,7 +1,23 @@
 import React from 'react'
 import { Header, Image, Segment, Icon, Input } from 'semantic-ui-react'
+import Auth from '../utils/auth'
+import { Redirect } from 'react-router-dom'
 
-const Mainpage = () => (
+
+
+
+
+
+
+const Mainpage = () => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+  if(!token){
+    return <Redirect to="/login" />;
+  }
+
+    
+   
+return(
 <div>
     <Header textAlign='center' as='h1'>
         <Image src="busicon.png" alt="Bus" />
@@ -41,9 +57,11 @@ const Mainpage = () => (
     <Segment color = 'black' padded textAlign='center'>Student Name 4</Segment>
     <Segment color = 'yellow' padded textAlign='center'>Student Name 5</Segment>
   </Segment.Group>
-
+   
 </div>
 )
+}
+
 
 
 

@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
+
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Roster from './pages/RosterStatus'
@@ -20,6 +21,7 @@ import Mainpage from './pages/Mainpage';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+// import Navbar from './components/Navbar';
 import BreakdownSubmissions from './pages/BreakdownsSubmissions';
 // import NavPreLogin from './components/NavPreLogin';
 
@@ -65,6 +67,7 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
+          {/* <Navbar/> */}
           <div className="container">
             <Route exact path="/">
               <Home />

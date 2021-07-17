@@ -194,3 +194,5 @@ export default class Navbar extends Component {
   ResponsiveContainer.propTypes = {
     children: PropTypes.node,
   };
+
+// export default Navbar;
