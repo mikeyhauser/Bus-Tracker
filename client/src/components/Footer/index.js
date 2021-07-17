@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useHistory, Link } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { Container, List, Grid, Header, Button, Segment } from 'semantic-ui-react'
 
 const Footer = () => {
@@ -37,11 +37,11 @@ const Footer = () => {
         <Grid.Row>
           <Grid.Column width={3}>
             <Header inverted as='h4' content='Navigation' style={{ color:'#FFE082'}}/>
-            <List link inverted>
+            <List style={{ color:'#FFE082'}}link inverted>
               <List.Item as='a'>Sign Up</List.Item>
               <List.Item as='a'>Login</List.Item>
-              <List.Item as='a'></List.Item>
-              <List.Item as='a'></List.Item>
+              <List.Item as='a'>Home</List.Item>
+              <List.Item as='a'>Contact</List.Item>
               <Button color='yellow' content='Go Back' onClick={() => history.goBack()}>
           </Button>
             </List>
@@ -49,11 +49,12 @@ const Footer = () => {
           <Grid.Column width={3}>
             <Header style={{ color:'#FFE082'}}inverted as='h4' content='Contributors' />
             <List link inverted>
-              <List.Icon name='github' size='large' verticalAlign='middle' />
-              <List.Item as='a'href='https://github.com/Vinyl77'>Stevenson White II</List.Item>
-              <List.Item as='a'>DNA FAQ</List.Item>
-              <List.Item as='a'>How To Access</List.Item>
-              <List.Item as='a'>Favorite X-Men</List.Item>
+              <List.Icon style={{ color:'#FFE082'}}name='github' size='large' verticalAlign='middle' />
+              <List.Item style={{ color:'#FFE082'}}as='a'href='https://github.com/Vinyl77' target='blank'>Stevenson White II</List.Item>
+              <List.Item style={{ color:'#FFE082'}}as='a'>Hannah Biggam</List.Item>
+              <List.Item style={{ color:'#FFE082'}}as='a'>Mikey Hauser</List.Item>
+              <List.Item style={{ color:'#FFE082'}}as='a'>Richard Yvarra</List.Item>
+              <List.Item style={{ color:'#FFE082'}} as='a'href='https://github.com/mikeyhauser/Bus-Tracker' target='blank'>Bus Tracker Repository</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={7}>
