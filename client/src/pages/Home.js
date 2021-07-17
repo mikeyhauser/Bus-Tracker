@@ -13,6 +13,7 @@ import {
   List,
   Menu,
   Segment,
+  Reveal,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react';
@@ -258,7 +259,15 @@ const HomepageLayout = () => (
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-          <Image src="busicon.png" alt="Bus" />
+
+          <Reveal animated='rotate'>
+    <Reveal.Content visible>
+      <Image circular size='large' src='busiconnontransparent.png' />
+    </Reveal.Content>
+    <Reveal.Content hidden>
+      <Image circular size='medium' src='boy.png' />
+    </Reveal.Content>
+  </Reveal>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

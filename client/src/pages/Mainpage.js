@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Image, Segment, Icon } from 'semantic-ui-react'
+import { Header, Image, Segment, Icon, Input } from 'semantic-ui-react'
 
 const Mainpage = () => (
 <div>
@@ -10,6 +10,8 @@ const Mainpage = () => (
       Manage your route below.
      </Header.Subheader>
     </Header>
+
+    <Input action='Submit' placeholder='Enter Bus Number Here' />
 
 <Segment raised>
     <Header textAlign='center' as='h2'>
