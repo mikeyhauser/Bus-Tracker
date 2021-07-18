@@ -57,7 +57,7 @@ const SignUpForm = () => {
   return (
   <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
     <Grid.Column style={{ maxWidth: 450 }}>
-      <Header as='h2' color='teal' textAlign='center'>
+      <Header as='h2' color='black' textAlign='center'>
         <Image src="busicon.png" alt="Bus Icon" /> Sign Up for your account
       </Header>
       <Form validated={validated} onSubmit={handleFormSubmit} size='large'>
@@ -95,8 +95,8 @@ const SignUpForm = () => {
             required
           />
 
-          <Button  disabled={!(userFormData.username && userFormData.email && userFormData.password)}
-          type='submit'color='teal' fluid size='large'>
+          <Button   disabled={!(userFormData.username && userFormData.email && userFormData.password)}style={{background:'#FFE082'}}
+          type='submit' fluid size='large'>
             Signup
           </Button>
           <Modal
@@ -119,7 +119,7 @@ const SignUpForm = () => {
         </Modal>
         </Segment>
       </Form>
-      <Message>
+      <Message style={{background:'#FFE082'}}>
         Already a user? <a href='/login'>Login</a>
       </Message>
     </Grid.Column>

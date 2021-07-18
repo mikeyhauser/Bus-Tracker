@@ -272,7 +272,7 @@ const HomepageLayout = () => (
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-            <Button color='yellow' size='huge'>Sign Up</Button>
+            <Button as ={ Link } to='/signup' color='yellow' size='huge'>Sign Up</Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>

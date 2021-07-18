@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Header, Segment } from 'semantic-ui-react'
+import { List, Header, Segment, Input } from 'semantic-ui-react'
 import { useQuery } from '@apollo/client';
 import { CURRENT_ROSTER } from '../utils/queries'
 import { Redirect } from 'react-router-dom';
@@ -35,6 +35,7 @@ const RosterStatus = () => {
     return <h1>{loading}</h1>
   }
   return <div>
+    <Input action='submit' placeholder='Enter Bus Here'/>
     <Header block>ROSTER STATUS:</Header>
     <Segment>
 

@@ -5,6 +5,7 @@ import { LOGIN_USER } from '../utils/mutations'
 import Auth from '../utils/auth'
 
 
+
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
@@ -56,7 +57,7 @@ const LoginForm = () => {
 return (
   <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
     <Grid.Column style={{ maxWidth: 450 }}>
-      <Header as='h2' color='teal' textAlign='center'>
+      <Header as='h2' color='black' textAlign='center'>
         <Image src="busicon.png" alt="Bus Icon" /> Log-in to your account
       </Header>
       <Form noValidate validated={validated}onSubmit={handleFormSubmit} size='large'>
@@ -88,7 +89,7 @@ return (
             required
           />
 
-          <Button  color='teal' fluid size='large'>
+          <Button  style={{background:'#FFE082'}} fluid size='large'>
             Login
           </Button>
           <Modal
@@ -112,7 +113,7 @@ return (
   
         </Segment>
       </Form>
-      <Message>
+      <Message style={{background:'#FFE082'}}>
         New to us? <a href ='/signup' >Sign Up</a>
       </Message>
     </Grid.Column>
