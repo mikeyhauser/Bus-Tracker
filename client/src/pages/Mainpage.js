@@ -189,8 +189,15 @@
 import React from 'react'
 import { Header, Image, Segment, Icon, Input } from 'semantic-ui-react'
 import RouteSelector from '../components/RouteSelector';
+import { Redirect } from 'react-router-dom';
+import Auth from '../utils/auth';
 
-const Mainpage = () => (
+const Mainpage = () => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+      if(!token){
+        return <Redirect to="/login" />;
+      }
+    return (
 <div>
     <Header textAlign='center' as='h1'>
         <Image src="busicon.png" alt="Bus" />
@@ -201,5 +208,6 @@ const Mainpage = () => (
     </Header>
 <RouteSelector />
 </div>
-)
+    )
+}
 export default Mainpage;
