@@ -1,8 +1,14 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { DELETE_BREAKDOWN } from '../../utils/mutations'
 const BreakdownList = ({ breakdowns, title }) => {
-
-
+  function reload(){
+    window.location.reload()
+  }
+  const [search, {loading}] = useMutation(DELETE_BREAKDOWN);
+    // .then(window.location.reload()
+    // )
+    
   return (
     <div>
       <h3 className="text-primary">{title}</h3>
@@ -15,13 +21,18 @@ const BreakdownList = ({ breakdowns, title }) => {
                   Bus Number: {breakdown.busNumber} <br/>
                   Breakdown: {breakdown.mechanicalProblem} <br/>
                   Date of Breakdown: {breakdown.dateOfBreakdown} <br/>
+                  <button onClick={() => search({ variables: {  busNumber: breakdown.busNumber} }
+         )
+        //  , () => window.location.reload()
+        }>DELETE
+          </button>
+             {/* <button onClick={() => search({ variables: { order: parseInt(stop), route: routeNumber} }
+        )}>BRING BUS BACK ONLINE
+          </button> */}
                   {/* Assigned Mechanic: {assignedMechanic}<br/>
                   Parts Ordered: {partsOrdered}<br/>
                   Projected Completion: {projectedCompletion}<br/> */}
                 
-
-
-
                   {/* <span className="text-white" style={{ fontSize: '1rem' }}>
                     currently has {breakdowns ? breakdowns.length : 0}{' '}
                     endorsed skill
@@ -35,5 +46,4 @@ const BreakdownList = ({ breakdowns, title }) => {
     </div>
   );
 };
-
 export default BreakdownList;

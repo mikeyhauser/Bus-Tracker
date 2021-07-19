@@ -1,15 +1,13 @@
 import { gql } from '@apollo/client';
-
-
-
 // pull up students at current stop
 export const CURRENT_STOP = gql`
   query stopQueue ($order: Int!, $route: Int!) {
-  	currentStop(order: $order, route: $route){
+    currentStop(order: $order, route: $route){
     _id
     order
-    route	
+    route 
     students
+    location
   }
 } 
 `;
@@ -19,11 +17,10 @@ export const CURRENT_ROSTER = gql`
     currentRoster(busNumber: $busNumber){
       _id
       name
-      contact	
+      contact 
     }
   } 
 `;
-
 // pull students that belong to a 
 // broken bus and need to be picked up
 // by another running bus
@@ -35,8 +32,6 @@ query unassignedQueue ($isRunning: Boolean!) {
   }
 }
 `;
-
-
 export const CURRENT_BREAKDOWNS = gql`
 query breakdownsQueue {
   breakdowns{
@@ -44,6 +39,14 @@ query breakdownsQueue {
       busNumber
       mechanicalProblem
       dateOfBreakdown
+  }
+}
+`;
+export const MISSING_STUDENTS = gql`
+query checkMissedStudents ($missedBus: Boolean!) {
+  checkMissedStudents(missedBus: $missedBus){
+    students
+    
   }
 }
 `;

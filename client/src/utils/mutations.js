@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client';
-
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -11,7 +10,6 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -23,7 +21,6 @@ export const ADD_USER = gql`
     }
   }
 `;
-
 //creates a breakdown report
 export const REPORT_BREAKDOWN = gql`
     mutation reportBreakdown ($busNumber: Int!, $mechanicalProblem: String!, $dateOfBreakdown: String!) {
@@ -33,7 +30,14 @@ export const REPORT_BREAKDOWN = gql`
       }
     }
   `;
-
+  export const DELETE_BREAKDOWN = gql`
+    mutation deleteBreakdown ($busNumber: Int!) {
+      deleteBreakdown(busNumber: $busNumber) {
+        _id
+        
+      }
+    }
+  `;
 //Change students missedBus boolean value
 export const STUDENT_STATUS = gql`
     mutation studentStatus ($name: String!, $missedBus: Boolean!) {
@@ -45,7 +49,6 @@ export const STUDENT_STATUS = gql`
       }
     }
 `;
-
 //Changes bus isRunning boolean value
 export const BUS_STATUS = gql`
 mutation busStatus ($busNumber: Int!, $isRunning: Boolean!) {
