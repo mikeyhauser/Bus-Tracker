@@ -1,9 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Bus, Stop, Student, Breakdown, User } = require('../models');
-
 const { signToken } = require('../utils/auth');
-
-
 const resolvers = {
     Query: {
         user: async ()=> {
@@ -21,33 +18,30 @@ const resolvers = {
         breakdowns: async () => {
             return await Breakdown.find({});
         },
-
         currentStop: async (parent, { order, route }) => {
             const busStop = await Stop.findOne({ order: order, route: route }
             );
             return busStop;
         },
-
         currentRoster: async (parent, { busNumber }) => {
             const busStop = await Student.find({ busNumber: busNumber }
             );
             return busStop;
         },
-
         unassignedStudents: async (parent, { isRunning }) => {
             const downedBus = await Bus.find({ isRunning: isRunning }
             );
             return downedBus;
-        }
-
+        },
+        checkMissedStudents: async (parent, { missedBus }) => {
+          const missedBusArray = await Student.find({ missedBus: missedBus }
+          );
+          return missedBusArray;
+      }
         
         
-
-
     },
-
     Mutation: {
-
         // **richard code below
 addUser: async (parent, args) => {
           const user = await User.create(args);
@@ -71,18 +65,15 @@ addUser: async (parent, args) => {
           const token = signToken(user);
           return { token, user };
         },
-
-
         // richard code above
         // mikey code below
-
-
         addBreakdown: async (parent, { busNumber, mechanicalProblem, dateOfBreakdown }) => {
           return Breakdown.create({ busNumber, mechanicalProblem, dateOfBreakdown });
         },
-
+        deleteBreakdown: async (parent, { busNumber }) => {
+          return Breakdown.deleteOne({ busNumber });
+        },
        
-
           studentStatus: async (parent, { name, missedBus }) => {
             return Student.findOneAndUpdate(
               { name: name },
@@ -100,8 +91,4 @@ addUser: async (parent, args) => {
           }
     }
 };
-
-
-
-
 module.exports = resolvers;
