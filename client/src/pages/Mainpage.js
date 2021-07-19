@@ -189,6 +189,7 @@
 import React from 'react'
 import { Header, Image, Segment, Icon, Input } from 'semantic-ui-react'
 import RouteSelector from '../components/RouteSelector';
+
 const Mainpage = () => (
 <div>
     <Header textAlign='center' as='h1'>

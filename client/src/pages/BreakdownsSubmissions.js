@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { REPORT_BREAKDOWN, BUS_STATUS } from '../utils/mutations'
 import { Container, Form, TextArea, Header, Image, Input, Button } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom';
+import Auth from '../utils/auth';
+
+
+
 function BreakdownSubmissions() {
     const [busNumber, setBus] = useState(0);
     const [mechanicalProblem, setProblem] = useState('');
@@ -21,6 +26,11 @@ function BreakdownSubmissions() {
           console.error(err);
         }
       };
+
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
+if(!token){
+  return <Redirect to="/login" />;
+}
     return <div>
         <Container>
             <Header textAlign='center' as='h1'>
