@@ -80,9 +80,9 @@ export default class Navbar extends Component {
               />
               <Menu.Item
                 as={NavLink}
-                to="/breakdownsubmissions"
-                name="breakdownsubmissions"
-                active={activeItem === "breakdownsubmissions"}
+                to="/breakdownSubmissions"
+                name="breakdown Submissions"
+                active={activeItem === "breakdown Submissions"}
                 onClick={this.handleItemClick}
               />
                            <Menu.Item
@@ -173,8 +173,8 @@ class MobileContainer extends Component {
             <Menu.Item
               as={NavLink}
               to="/breakdownsubmissions"
-              name="breakdownsubmissions"
-              active={activeItem === "breakdownsubmissions"}
+              name="breakdown Submissions"
+              active={activeItem === "breakdown Submissions"}
               onClick={this.handleItemClick}
             />
                        <Menu.Item
