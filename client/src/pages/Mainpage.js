@@ -2,26 +2,16 @@
 // import { Header, Image, Segment, Icon, Input, Grid, Form, Button } from 'semantic-ui-react'
 // import { Redirect } from 'react-router-dom'
 // import Auth from '../utils/auth'
-
-
-
-
-
-
-
 // const Mainpage = () => {
 //     const token = Auth.loggedIn() ? Auth.getToken() : null;
 //   if(!token){
 //     return <Redirect to="/login" />;
 //   }
-
     
    
 // return(
 // <div>
-
 // {/* FULL SCREEN  */}
-
 // <Header textAlign='center' as='h1'>
 //         <Image src="busicon.png" alt="Bus" />
 //         PICK-UP LIST
@@ -29,17 +19,18 @@
 //       Manage your route below.
 //      </Header.Subheader>
 //     </Header>
-
 //     <Segment inverted color='yellow'>
 //         <Header as='h2' textAlign='center'>
 //         Bus Number
 //         </Header>
+
+
 //         <Header as='h4' textAlign='center'>
 //         <Input action='Submit' placeholder='Enter Bus Number' />
 //         </Header>
+
+
 //     </Segment>
-
-
 // <Grid celled>
 //     <Grid.Row>
 //       <Grid.Column width={5}>
@@ -69,7 +60,6 @@
 //   </Segment.Group>
 //       </Grid.Column>
 //     </Grid.Row>
-
 //     <Grid.Row>
 //       <Grid.Column color="yellow" width={2}>
 //       <Button icon basic color="black">
@@ -89,7 +79,6 @@
 
 
 // {/* MOBILE VIEW */}
-
 //     <Header textAlign='center' as='h1'>
 //         <Image src="busicon.png" alt="Bus" />
 //         PICK-UP LIST
@@ -97,7 +86,6 @@
 //       Manage your route below.
 //      </Header.Subheader>
 //     </Header>
-
 // <Segment raised inverted color='yellow'>
 //         <Header as='h2' textAlign='center'>
 //         Bus Number
@@ -105,14 +93,14 @@
 //         <Header as='h4' textAlign='center'>
 //         <Input action='Submit' placeholder='Enter Bus Number' />
 //         </Header>
-//     </Segment>
 
+
+//     </Segment>
 // {/* <Segment raised>
 //     <Header textAlign='center' as='h3'>
 //         Stop Name
 //     </Header>
 // </Segment> */}
-
 // <Segment raised>
 // <Header textAlign='center' as='h3'>
 //         STOP NAME  
@@ -124,9 +112,6 @@
 //     </Header>
 //     </Segment>
 // </Segment>
-
-
-
 // <Segment.Group raised>
 // <h3 class="ui center aligned icon header">
 //   <i class="circular users icon"></i>
@@ -138,7 +123,6 @@
 //     <Segment color = 'black' padded textAlign='center'>Student Name 4</Segment>
 //     <Segment color = 'yellow' padded textAlign='center'>Student Name 5</Segment>
 //   </Segment.Group>
-
 //   <Segment.Group raised horizontal>
 //     <Segment inverted color="yellow">
 //     <Button icon basic color="black">
@@ -155,8 +139,6 @@
 //         </Button>
 //     </Segment>
 //   </Segment.Group>
-
-
 //   {/* <Grid.Row>
 //       <Grid.Column color="yellow" width={2}>
 //       <Button icon basic color="black">
@@ -171,25 +153,21 @@
 //         </Button>
 //       </Grid.Column>
 //     </Grid.Row> */}
-
 // </div>
 // )
 // }
-
-
-
-
 // export default Mainpage;
-
-
-
-
-
-
 import React from 'react'
 import { Header, Image, Segment, Icon, Input } from 'semantic-ui-react'
 import RouteSelector from '../components/RouteSelector';
-const Mainpage = () => (
+import { Redirect } from 'react-router-dom';
+import Auth from '../utils/auth';
+const Mainpage = () => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+      if(!token){
+        return <Redirect to="/login" />;
+      }
+    return (
 <div>
     <Header textAlign='center' as='h1'>
         <Image src="busicon.png" alt="Bus" />
@@ -200,5 +178,6 @@ const Mainpage = () => (
     </Header>
 <RouteSelector />
 </div>
-)
+    )
+}
 export default Mainpage;
