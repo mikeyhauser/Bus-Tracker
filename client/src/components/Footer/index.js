@@ -62,7 +62,7 @@ const Footer = () => {
               Bus Tracker
             </Header>
             <p>
-              Extra space for a call to action inside the footer that could help re-engage users.
+              The wheels on the bus go round and round.
             </p>
           </Grid.Column>
         </Grid.Row>

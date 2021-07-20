@@ -49,7 +49,7 @@
 
 
 import React, { useState } from 'react';
-import { List, Header, Segment } from 'semantic-ui-react'
+import { List, Header, Segment, Button, Input } from 'semantic-ui-react'
 import { useLazyQuery } from '@apollo/client';
 import { CURRENT_ROSTER  } from '../utils/queries'
 import { Redirect } from 'react-router-dom';
@@ -65,11 +65,11 @@ function RosterStatus () {
     const searchData = data?.currentRoster || [];
   return <div>
       
-      <p>
-        BUS IN USE:
-      </p>
+      <Header  style={{ paddingTop:'5rem'}}>
+                Bus Number
+</Header>
       <div className="form">
-        <input
+        <Input
           value={busNumber}
           name="busNumber"
           onChange={e=>setBus(parseInt(e.target.value))}
@@ -77,9 +77,9 @@ function RosterStatus () {
           placeholder="Enter Your Bus"
         />
        
-        <button onClick={() => search({ variables: { busNumber: busNumber} }
+        <Button color='yellow' onClick={() => search({ variables: { busNumber: busNumber} }
         )}>SUBMIT
-          </button>
+          </Button>
       </div>
     <Header block>ROSTER STATUS:</Header>
     <Segment>

@@ -19,7 +19,7 @@
  */
 body {
   margin: 0;
-  background-color: grey;
+  background-color:white;
 }
 
 /**
@@ -27,7 +27,7 @@ body {
  */
 main {
   display: block;
-  background-color:rgb(129, 129, 70)
+  background-color: #FFE082
 }
 
 /**
@@ -941,6 +941,8 @@ a:hover {
 
 .bg-dark {
   background-color: #1a1a1a !important;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .bg-white {

@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { DELETE_BREAKDOWN } from '../../utils/mutations'
+import {
+  Menu,
+  Segment,
+  Button,
+  Visibility,
+  Container,
+  Sidebar,
+  Icon,
+} from "semantic-ui-react";
+import { NavLink, Link } from "react-router-dom";
+
 const BreakdownList = ({ breakdowns, title }) => {
   function reload(){
     window.location.reload()
@@ -21,11 +32,11 @@ const BreakdownList = ({ breakdowns, title }) => {
                   Bus Number: {breakdown.busNumber} <br/>
                   Breakdown: {breakdown.mechanicalProblem} <br/>
                   Date of Breakdown: {breakdown.dateOfBreakdown} <br/>
-                  <button onClick={() => search({ variables: {  busNumber: breakdown.busNumber} }
+                  <Button color='yellow' onClick={() => search({ variables: {  busNumber: breakdown.busNumber} }
          )
         //  , () => window.location.reload()
         }>DELETE
-          </button>
+          </Button>
              {/* <button onClick={() => search({ variables: { order: parseInt(stop), route: routeNumber} }
         )}>BRING BUS BACK ONLINE
           </button> */}

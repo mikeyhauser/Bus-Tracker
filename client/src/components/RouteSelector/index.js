@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Header, Segment } from 'semantic-ui-react'
+import { Header, Segment, Button } from 'semantic-ui-react'
 import {  useLazyQuery, useMutation } from '@apollo/client';
 import { CURRENT_STOP, MISSING_STUDENTS } from '../../utils/queries'
 import {  STUDENT_STATUS } from '../../utils/mutations'
@@ -32,9 +32,9 @@ function RouteSelector() {
   if (loading) return <p>Loading ...</p>;
   return (
     <div>
-       <p>
+       <Header>
         BUS IN USE:
-      </p>
+        </Header>
       <div className="form">
         <input
           value={routeNumber}
@@ -44,9 +44,9 @@ function RouteSelector() {
           placeholder="Enter Your Bus"
         />
        
-        <button onClick={() => search({ variables: { order: parseInt(stop), route: routeNumber} }
+        <Button color='yellow' onClick={() => search({ variables: { order: parseInt(stop), route: routeNumber} }
         )}>SUBMIT
-          </button>
+          </Button>
       </div>
      
       <div className="card text-center">
@@ -58,13 +58,13 @@ function RouteSelector() {
     </Header>
       
       
-        <button className="btn btn-primary" type="button" onClick={previousStop}>
+        <Button color='yellow' className="btn btn-primary" type="button" onClick={previousStop}>
           PREVIOUS STOP
-        </button>
-        <button className="btn btn-primary" type="button" onClick={nextStop
+        </Button>
+        <Button color='yellow' className="btn btn-primary" type="button" onClick={nextStop
         }>
           NEXT STOP
-        </button>
+        </Button>
       
         <Segment.Group>
         {searchData.students &&
