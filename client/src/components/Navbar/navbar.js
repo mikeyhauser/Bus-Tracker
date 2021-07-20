@@ -80,11 +80,18 @@ export default class Navbar extends Component {
               />
               <Menu.Item
                 as={NavLink}
-                to="/unassigned"
-                name="unassigned"
-                active={activeItem === "unassigned"}
+                to="/breakdownSubmissions"
+                name="breakdown Submissions"
+                active={activeItem === "breakdown Submissions"}
                 onClick={this.handleItemClick}
               />
+                           <Menu.Item
+              as={NavLink}
+              to="/mainpage"
+              name="Route View"
+              active={activeItem === "mainpage"}
+              onClick={this.handleItemClick}
+            />
               <Menu.Item position="right">
                 <Button
                   as={Link}
@@ -165,11 +172,19 @@ class MobileContainer extends Component {
             />
             <Menu.Item
               as={NavLink}
-              to="/unassigned"
-              name="unassigned"
-              active={activeItem === "unassigned"}
+              to="/breakdownsubmissions"
+              name="breakdown Submissions"
+              active={activeItem === "breakdown Submissions"}
               onClick={this.handleItemClick}
             />
+                       <Menu.Item
+              as={NavLink}
+              to="/mainpage"
+              name="Route View"
+              active={activeItem === "mainpage"}
+              onClick={this.handleItemClick}
+            />
+
           </Sidebar>
           <Sidebar.Pusher dimmed={sidebarOpened}>
             <Segment

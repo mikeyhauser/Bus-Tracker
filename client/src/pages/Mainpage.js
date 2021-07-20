@@ -162,6 +162,7 @@ import { Header, Image, Segment, Icon, Input } from 'semantic-ui-react'
 import RouteSelector from '../components/RouteSelector';
 import { Redirect } from 'react-router-dom';
 import Auth from '../utils/auth';
+
 const Mainpage = () => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
       if(!token){
